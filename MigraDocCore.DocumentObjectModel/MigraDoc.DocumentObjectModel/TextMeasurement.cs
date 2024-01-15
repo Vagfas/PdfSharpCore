@@ -44,10 +44,10 @@ namespace MigraDocCore.DocumentObjectModel
         /// <summary>
         /// Initializes a new instance of the TextMeasurement class with the specified font.
         /// </summary>
-        public TextMeasurement(XGraphics graphics, Font font)
+        public TextMeasurement(Font font)
         {
             this.font = font ?? throw new ArgumentNullException("font");
-            this.graphics = graphics;
+            this.graphics = XGraphics.CreateMeasureContext(new XSize(2000, 2000), XGraphicsUnit.Point, XPageDirection.Downwards);
         }
 
         /// <summary>
